@@ -19,6 +19,7 @@ resource "aws_instance" "rhel_server" {
 
     tags = {
       "Role" = var.servername
+      "Name" = var.servername
     }
 
 }

@@ -1,4 +1,5 @@
 resource "aws_instance" "rhel_server" {
+    
     ami                         = var.ami_linux
     instance_type               = var.instance_size
     subnet_id                   = var.subnet-id
@@ -19,14 +20,15 @@ resource "aws_instance" "rhel_server" {
 
     tags = {
       "Role" = var.servername
+      "Name" = var.servername
     }
 
 }
 
 
-resource "aws_route53_record" "nfs_r53_record" { 
+resource "aws_route53_record" "ansible_r53_record" { 
         zone_id = "${var.private_r53}"
-        name    = "nfs-TEST"
+        name    = "ansible-TEST"
         type    = "A"
         ttl     = "300"
         records = ["${aws_instance.rhel_server.private_ip}"]

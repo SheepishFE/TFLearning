@@ -30,10 +30,15 @@ module "EC2Ansible" {
     subnet-id               = module.VPC.subnet-id
     keypair                 = "keypair"
     private_r53             = module.VPC.private_r53
+    nfs-instance-ip         = module.EC2NFS.nfs-instance-ip
 }
 
 module "VPC" {
     source = "./modules/VPC"
 
     management_vpc_cidr = var.management_vpc_cidr
+}
+
+module "Secrets" {
+    source = "./modules/Secrets"
 }

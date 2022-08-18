@@ -5,7 +5,7 @@ resource "aws_ebs_volume" "tools-nfs-volume" {
 }
 
 resource "aws_volume_attachment" "NFS-Attach" {
-    device_name  = "/dev/xvdb"
+    device_name  = "/dev/xvdc"
     volume_id    = aws_ebs_volume.tools-nfs-volume.id
     instance_id  = aws_instance.rhel_server.id
     force_detach = true
