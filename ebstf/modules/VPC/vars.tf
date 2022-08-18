@@ -1,1 +1,0 @@
-variable "management_vpc_cidr" {}
