@@ -28,7 +28,7 @@ userdata for both server contains some auto configuration, for example mounting 
 
 **NFS Instance** Can be used as an Ansible node for testing
 
-**Ansible Control** Node Instance - WIP
+**Ansible Control Node Instance** - WIP
 
 **Secrets** (not really doing anything currently)
 
