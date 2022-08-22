@@ -7,7 +7,7 @@ Every time a new cloud playground is built, run "aws configure" to configure the
 Region - us-east-1
 
 # Remote State - Pre-Req
-First build the remote state S3 bucket by doing the below:
+First build the remote state S3 bucket before ebstf by doing the below:
 1. cd into "remote-state"
 2. delete any state files, IE **terraform.tfstate, .terraform.lock.hcl and the .terraform folder**
 3. terraform init
