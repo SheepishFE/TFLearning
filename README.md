@@ -12,6 +12,13 @@ First build the remote state S3 bucket by doing the below:
 3. terraform apply
 
 # EBSTF
-ebstf contains the learning infrastructure, currently it builds a VPC, Route 53 zone and 2 Instances
+ebstf contains the learning infrastructure, currently it builds a VPC, Route 53 zone and 2 Instances.
+
+userdata for both server contains some auto configuration, for example mounting the NFS share automatically.
+
+# Modules
+VPC
+NFS Instance
+Ansible Control Node Instance
 
 # Max 10 instances , or the cloud playground will be shutdown.
