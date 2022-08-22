@@ -1,6 +1,15 @@
 # TFLearning
 Used for learning Terraform and Ansible.
 
+# ACG - Pre-Req
+Login to ACG (https://learn.acloud.guru/dashboard) and choose playground in the top bar:
+
+![image](https://user-images.githubusercontent.com/27139940/185919134-7a585862-5516-4896-b18d-e1c865a2503c.png)
+
+Grab the sandbox details:
+
+![image](https://user-images.githubusercontent.com/27139940/185919249-4c589581-8707-4136-84e7-ed7bb80a18dd.png)
+
 # AWS - Pre-Req
 Every time a new cloud playground is built, run "aws configure" to configure the CLI and enter the access/ secret key.
 
