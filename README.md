@@ -46,3 +46,6 @@ userdata for both server contains some auto configuration, for example mounting 
 **Secrets** (not really doing anything currently)
 
 # Max 10 instances , or the cloud playground will be shutdown.
+
+![image](https://user-images.githubusercontent.com/27139940/185928716-54602887-a2e0-439f-9847-f72fc42a3a12.png)
+
