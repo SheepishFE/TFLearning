@@ -9,8 +9,9 @@ Region - us-east-1
 # Remote State - Pre-Req
 First build the remote state S3 bucket by doing the below:
 1. cd into "remote-state"
-2. terraform init
-3. terraform apply
+2. delete any state files, IE **terraform.tfstate, .terraform.lock.hcl and the .terraform folder**
+3. terraform init
+4. terraform apply
 
 # SSH Key - Pre-Req
 Create a new ssh key on your local machine, create a new aws_key_pair resource with the public key details here (don't get rid of existing)
