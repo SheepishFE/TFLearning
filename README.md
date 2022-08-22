@@ -3,6 +3,7 @@ Used for learning Terraform and Ansible.
 
 # AWS - Pre-Req
 Every time a new cloud playground is built, run "aws configure" to configure the CLI and enter the access/ secret key.
+
 Region - us-east-1
 
 # Remote State - Pre-Req
@@ -13,9 +14,11 @@ First build the remote state S3 bucket by doing the below:
 
 # SSH Key - Pre-Req
 Create a new ssh key on your local machine, create a new aws_key_pair resource with the public key details here (don't get rid of existing)
+
 main/ebstf/keypair.tf
 
 Specify the path to the private key when connecting:
+
 ssh -i .\EC2 ec2-user@54.175.107.169
 
 # EBSTF
