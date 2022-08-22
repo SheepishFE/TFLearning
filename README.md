@@ -24,9 +24,12 @@ ebstf contains the learning infrastructure, currently it builds a VPC, Route 53 
 userdata for both server contains some auto configuration, for example mounting the NFS share automatically.
 
 # Modules
-VPC - Sets up a basic VPC with open SSH access
-NFS Instance - Can be used as an Ansible node for testing
-Ansible Control Node Instance - WIP
-Secrets (not really doing anything currently)
+**VPC** - Sets up a basic VPC with open SSH access
+
+**NFS Instance** Can be used as an Ansible node for testing
+
+**Ansible Control** Node Instance - WIP
+
+**Secrets** (not really doing anything currently)
 
 # Max 10 instances , or the cloud playground will be shutdown.
