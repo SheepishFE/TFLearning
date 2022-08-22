@@ -14,9 +14,9 @@ First build the remote state S3 bucket before ebstf by doing the below:
 4. terraform apply
 
 # SSH Key - Pre-Req
-Create a new ssh key on your local machine, create a new aws_key_pair resource with the public key details here (don't get rid of existing)
+Create a new ssh key on your local machine, create a new (don't get rid of existing) aws_key_pair resource with the public key details here:
 
-main/ebstf/keypair.tf
+/ebstf/keypair.tf
 
 Specify the path to the private key when connecting:
 
