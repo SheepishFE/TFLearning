@@ -11,7 +11,7 @@ Grab the sandbox details:
 ![image](https://user-images.githubusercontent.com/27139940/185919249-4c589581-8707-4136-84e7-ed7bb80a18dd.png)
 
 # AWS - Pre-Req
-Every time a new cloud playground is built, run "aws configure" to configure the CLI and enter the access/ secret key.
+Every time a new cloud playground is built, run "aws configure" to configure the CLI and enter the access/ secret key from the above step.
 
 Region - us-east-1
 
