@@ -11,7 +11,7 @@ Grab the sandbox details:
 ![image](https://user-images.githubusercontent.com/27139940/185919249-4c589581-8707-4136-84e7-ed7bb80a18dd.png)
 
 # AWS - Pre-Req
-Every time a new cloud playground is built, run "aws configure" to configure the CLI and enter the access/ secret key.
+Every time a new cloud playground is built, run "aws configure" to configure the CLI and enter the access/ secret key from the above step.
 
 Region - us-east-1
 
@@ -29,7 +29,7 @@ Create a new ssh key on your local machine, create a new (don't get rid of exist
 
 Specify the path to the private key when connecting:
 
-ssh -i .\EC2 ec2-user@54.175.107.169
+ssh -i .\EC2 ec2-user@54.175.107.169 (Change public IP to whatever the instance receives)
 
 # EBSTF
 ebstf contains the learning infrastructure, currently it builds a VPC, Route 53 zone and 2 Instances.
