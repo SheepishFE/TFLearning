@@ -19,15 +19,19 @@ systemctl enable amazon-ssm-agent
 sudo useradd ansible-user
 sudo passwd Test123!
 
-
+# Create ansible data drive
 mkdir -p /ansible
 mkfs.xfs /dev/nvme1n1
 echo "/dev/nvme1n1  /ansible  xfs     defaults  0 0" >> /etc/fstab
 mount /ansible
 chown ec2-user:ec2-user /ansible
 chmod 755 /ansible
-sudo yum install ansible
 
+#Install ansible
+yum install -y ansible
+systemctl enable ansible
+
+# Install nfs-utils and mount the NFS share
 yum install -y nfs-utils
 sudo mkdir /var/backups
 chown ec2-user:ec2-user /var/backups

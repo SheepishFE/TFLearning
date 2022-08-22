@@ -28,6 +28,7 @@ yum install -y nfs-utils
 sudo systemctl enable nfs-server.service
 sudo systemctl start nfs-server.service
 
+#Create shared directory, give ec2-user access and share it via /etc/exports
 mkdir -p /shared
 mkfs.xfs /dev/nvme1n1
 echo "/dev/nvme1n1  /shared  xfs     defaults  0 0" >> /etc/fstab
@@ -37,7 +38,7 @@ chmod 755 /shared
 echo '/shared   "*"(rw,sync,no_root_squash,no_subtree_check)' >> /etc/exports
 exportfs -a
 
-# Add FW rules
+# Add FW rules for NFS
 systemctl stop firewalld
 firewall-offline-cmd --zone=public --add-port=111/tcp
 firewall-offline-cmd --zone=public --add-port=2049/tcp
