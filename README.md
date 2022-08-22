@@ -18,7 +18,7 @@ Region - us-east-1
 # Remote State - Pre-Req
 First build the remote state S3 bucket before ebstf by doing the below:
 1. cd into "remote-state"
-2. delete any state files, IE **terraform.tfstate, .terraform.lock.hcl and the .terraform folder**
+2. delete any state files, IE **terraform.tfstate, .terraform.lock.hcl and any .terraform folders**
 3. terraform init
 4. terraform apply
 
