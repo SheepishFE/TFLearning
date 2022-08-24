@@ -42,3 +42,7 @@ module "VPC" {
 module "Secrets" {
     source = "./modules/Secrets"
 }
+
+module "cloudwatch" {
+    source = "./modules/Cloudwatch"
+}
