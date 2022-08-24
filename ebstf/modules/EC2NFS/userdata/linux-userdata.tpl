@@ -18,7 +18,7 @@ sudo systemctl enable amazon-ssm-agent
 sudo systemctl start amazon-ssm-agent
 
 sudo useradd ansible-user
-sudo passwd Test123!
+sudo passwd bqSAKRh26DMy
 
 #Get Role from Tags
 #role=$(/root/.local/bin/aws ec2 describe-tags --region us-east-1 --filters --output text "Name=resource-id,Values=$instance_id"

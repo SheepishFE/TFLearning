@@ -17,7 +17,7 @@ systemctl enable amazon-ssm-agent
 #"Name=key,Values=Role" --query 'Tags[*].Value')
 
 sudo useradd ansible-user
-sudo passwd Test123!
+sudo passwd bqSAKRh26DMy
 
 # Create ansible data drive
 mkdir -p /ansible
