@@ -1,0 +1,8 @@
+- name: Get EC2 instance metadata
+  ec2_metadata_facts:
+
+- name: Install Cloudwatch from RPM
+  yum
+    name: https://s3.amazonaws.com/amazoncloudwatch-agent/amazon_linux/amd64/latest/amazon-cloudwatch-agent.rpm
+    state: present
+

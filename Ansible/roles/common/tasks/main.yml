@@ -1,0 +1,3 @@
+---
+- name: install cloudwatch agent
+- include: install_cloudwatch.yml

@@ -29,7 +29,6 @@ chmod 755 /ansible
 
 #Install ansible
 yum install -y ansible
-systemctl enable ansible
 
 # Install nfs-utils and mount the NFS share
 yum install -y nfs-utils
@@ -41,5 +40,13 @@ mount /var/backups
 #Create home directory on login
 service oddjobd start chkconfig oddjobd on
 authconfig ==enablemkhomedir --update
+
+#Adds NFS node as a host
+echo "[nfs]
+${node1_ip}">>/etc/ansible/hosts
+
+# Install git and clone the repo to get ansible playbook code
+yum install -y git
+git clone https://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@github.com/username/repo.git
 
 reboot
