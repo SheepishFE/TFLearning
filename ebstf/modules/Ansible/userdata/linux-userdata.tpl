@@ -22,6 +22,9 @@ sudo mkdir /home/ansible-user/.ssh
 sudo chown -R ansible-user:ansible-user /home/ansible-user/.ssh
 sudo chmod 0700 /home/ansible-user/.ssh
 
+## add ansible user as sudoer
+echo "ansible-user ALL=(ALL) NOPASSWD:ALL"
+
 # Create ansible data drive
 mkdir -p /ansible
 mkfs.xfs /dev/nvme1n1
