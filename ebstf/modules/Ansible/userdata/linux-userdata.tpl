@@ -52,5 +52,7 @@ ${node1_ip}">>/etc/ansible/hosts
 # Install git and clone the repo to get ansible playbook code
 yum install -y git
 git clone https://@github.com/SheepishFE/TFLearning.git /home/ansible-user/repo
+chown -R ansible-user:ansible-user /home/ansible-user/repo
+chmod 755 /home/ansible-user/repo
 
 reboot

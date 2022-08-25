@@ -1,6 +1,0 @@
----
-- name: install cloudwatch agent
-- include: install_cloudwatch.yml
-
-- name: get-facts
-- include: get_facts.yml
