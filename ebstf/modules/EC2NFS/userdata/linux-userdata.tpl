@@ -19,6 +19,9 @@ sudo systemctl start amazon-ssm-agent
 
 sudo useradd ansible-user
 sudo passwd bqSAKRh26DMy
+sudo mkdir /home/ansible-user/.ssh
+sudo chown -R ansible-user:ansible-user /home/ansible-user/.ssh
+sudo chmod 0700 /home/ansible-user/.ssh
 
 #Get Role from Tags
 #role=$(/root/.local/bin/aws ec2 describe-tags --region us-east-1 --filters --output text "Name=resource-id,Values=$instance_id"

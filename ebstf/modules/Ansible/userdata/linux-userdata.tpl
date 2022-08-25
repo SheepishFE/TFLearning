@@ -18,6 +18,9 @@ systemctl enable amazon-ssm-agent
 
 sudo useradd ansible-user
 sudo passwd bqSAKRh26DMy
+sudo mkdir /home/ansible-user/.ssh
+sudo chown -R ansible-user:ansible-user /home/ansible-user/.ssh
+sudo chmod 0700 /home/ansible-user/.ssh
 
 # Create ansible data drive
 mkdir -p /ansible
@@ -29,6 +32,7 @@ chmod 755 /ansible
 
 #Install ansible
 yum install -y ansible
+ansible-galaxy collection install amazon.aws
 
 # Install nfs-utils and mount the NFS share
 yum install -y nfs-utils
@@ -47,6 +51,6 @@ ${node1_ip}">>/etc/ansible/hosts
 
 # Install git and clone the repo to get ansible playbook code
 yum install -y git
-git clone https://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@github.com/SheepishFE/TFLearning.git /home/ansible-user/repo
+git clone https://@github.com/SheepishFE/TFLearning.git /home/ansible-user/repo
 
 reboot

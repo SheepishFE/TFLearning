@@ -1,0 +1,16 @@
+---
+aws_cwa_namespace: 'CWAgent'
+aws_cwa_cfgs: 'templates/'
+aws_cwa_disk_monitor_paths:
+  - "/"
+  - "/var"
+aws_cwa_logfiles:
+  - file_path: '/var/log/syslog'
+    log_group_name: 'allec2'
+    log_group_tags:
+      - TagKey: EC2
+      - AnotherTag: Logs
+    log_stream_name: '{{ansible_hostname}}/syslog'
+    log_retention: '7'
+    timestamp_format: '%b %-d %H:%M:%S'
+    timezone: "LOCAL"

@@ -2,5 +2,6 @@
 - hosts:
     nfs
     localhost
+  become: yes
   roles:
     - common

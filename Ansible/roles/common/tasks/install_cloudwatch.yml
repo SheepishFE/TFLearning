@@ -1,8 +1,18 @@
-- name: Get EC2 instance metadata
-  ec2_metadata_facts:
-
+---
 - name: Install Cloudwatch from RPM
   yum
     name: https://s3.amazonaws.com/amazoncloudwatch-agent/amazon_linux/amd64/latest/amazon-cloudwatch-agent.rpm
     state: present
 
+- name: cloudwatch_agent - Generate JSON Config
+  template:
+    src: ./templates/cloudwatchcfg/amazon-cloudwatch-agent.json.j2
+    dest: /opt/aws/amazon-cloudwatch-agent/ec2/amazon-cloudwatch-agent.json
+
+- name: Enable and Start Cloudwatch
+  systemd:
+    name: amazon-cloudwatch-agent
+    state: started
+    enabled: "yes"
+    daemon_reload: "yes"
+  notify: cloudwatch-agent-restart

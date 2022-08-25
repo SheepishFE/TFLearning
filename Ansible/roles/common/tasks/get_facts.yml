@@ -1,0 +1,8 @@
+---
+- amazon.aws.ec2_metadata_facts:
+
+- debug: msg="{{ ec2_metadata.instances }}"
+
+- debug: msg="{{ ec2_metadata.instances[0].public_ip_address }}"
+
+
