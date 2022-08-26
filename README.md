@@ -1,5 +1,10 @@
 # TFLearning
-Used for learning Terraform and Ansible.
+Used for learning Terraform and Ansible, run in this order when building new:
+
+1. remote-state
+2. packer
+3. ebstf
+4. Ansible is ran directly on EC2 not via terraform
 
 ![image](https://user-images.githubusercontent.com/27139940/185928716-54602887-a2e0-439f-9847-f72fc42a3a12.png)
 
