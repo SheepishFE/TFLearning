@@ -8,6 +8,10 @@ yum install -y firewalld
 sudo systemctl enable firewalld.service
 sudo systemctl start firewalld.service
 
+# Bind Utils for DNS troubleshooting
+sudo yum update
+sudo yum install -y bind-utils
+
 #SSM Agent install
 yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
 sudo systemctl enable amazon-ssm-agent
