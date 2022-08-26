@@ -4,10 +4,6 @@
 echo "EC2Ansible.mgmt.test.com" > /etc/hostname
 hostname EC2Ansible.mgmt.test.com
 
-#Bind Utils for DNS troubleshooting
-yum update
-yum install -y bind-utils
-
 #SSM Agent install
 yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
 systemctl enable amazon-ssm-agent
@@ -15,15 +11,6 @@ systemctl enable amazon-ssm-agent
 #Get Role from Tags
 #role=$(/root/.local/bin/aws ec2 describe-tags --region us-east-1 --filters --output text "Name=resource-id,Values=$instance_id"
 #"Name=key,Values=Role" --query 'Tags[*].Value')
-
-sudo useradd ansible-user
-sudo passwd bqSAKRh26DMy
-sudo mkdir /home/ansible-user/.ssh
-sudo chown -R ansible-user:ansible-user /home/ansible-user/.ssh
-sudo chmod 0700 /home/ansible-user/.ssh
-
-## add ansible user as sudoer
-echo "ansible-user ALL=(ALL) NOPASSWD:ALL"
 
 # Create ansible data drive
 mkdir -p /ansible
