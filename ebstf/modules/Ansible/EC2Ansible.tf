@@ -1,6 +1,6 @@
 resource "aws_instance" "rhel_server" {
     
-    ami                         = var.ami_linux
+    ami                         = data.aws_ami.rhel8.id
     instance_type               = var.instance_size
     subnet_id                   = var.subnet-id
     associate_public_ip_address = true
@@ -40,4 +40,14 @@ data "template_file" "linuxuserdata" {
     vars = {
         node1_ip = "${var.nfs-instance-ip}"
     }
+}
+
+data "aws_ami" "rhel8" {
+  most_recent = true
+  owners = ["self"]
+
+  filter {
+    name   = "name"
+    values = "primary-ami-packer-*"
+  }
 }

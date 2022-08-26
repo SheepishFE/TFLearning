@@ -4,6 +4,10 @@
 echo "EC2Ansible.mgmt.test.com" > /etc/hostname
 hostname EC2Ansible.mgmt.test.com
 
+# Bind Utils for DNS troubleshooting
+sudo yum update
+sudo yum install -y bind-utils
+
 #SSM Agent install
 yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
 systemctl enable amazon-ssm-agent
