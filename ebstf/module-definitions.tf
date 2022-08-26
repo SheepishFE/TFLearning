@@ -5,7 +5,6 @@ module "EC2NFS" {
     root_volume_size        = var.root_volume_size
     servername              = "nfs1"
     iamrole                 = aws_iam_role.nfsinstanceprofile.id
-    ami_linux               = var.ami-linux
     securitygroupID         = module.VPC.securitygroupID
     disable_api_termination = "true"
     mon_to_fri_only         = "false"
@@ -22,7 +21,6 @@ module "EC2Ansible" {
     root_volume_size        = var.root_volume_size
     servername              = "ansible1"
     iamrole                 = aws_iam_role.nfsinstanceprofile.id
-    ami_linux               = var.ami-linux
     securitygroupID         = module.VPC.securitygroupID
     disable_api_termination = "true"
     mon_to_fri_only         = "false"

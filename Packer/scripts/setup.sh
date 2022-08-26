@@ -11,8 +11,8 @@ ANSIBLE_INSECURE_KEY="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDhN9rP3KRPij2uIDurP0
 sudo useradd ansible-user
 sudo echo "bqSAKRh26DMy" | passwd --stdin ansible-user
 sudo mkdir /home/ansible-user/.ssh
-sudo echo "${ANSIBLE_INSECURE_KEY}" > /home/ansible-user/.ssh/authorized_keys
-sudo echo "${ANSIBLE_INSECURE_KEY}" > /home/ansible-user/.ssh/tf-packer.pub
+sudo echo "$ANSIBLE_INSECURE_KEY" > /home/ansible-user/.ssh/authorized_keys
+sudo echo "$ANSIBLE_INSECURE_KEY" > /home/ansible-user/.ssh/tf-packer.pub
 
 #Set perms
 sudo chown -R ansible-user:ansible-user /home/ansible-user/.ssh

@@ -43,6 +43,6 @@ data "aws_ami" "rhel8" {
 
   filter {
     name   = "name"
-    values = "primary-ami-packer-*"
+    values = ["primary-ami-packer-*"]
   }
 }

@@ -7,5 +7,5 @@ output "ansible-instance-ip" {
 }
 
 output "ansible-instance-pip" {
-    value = "${aws_instance.rhel_server.public.ip}"
+    value = "${aws_instance.rhel_server.public_ip}"
 }

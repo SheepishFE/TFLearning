@@ -3,5 +3,5 @@ output "NFS" {
 }
 
 output "Ansible" {
-    value = module.Ansible
+    value = module.EC2Ansible
 }

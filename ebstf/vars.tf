@@ -1,8 +1,3 @@
-
-variable "ami-linux" {
-  description = "AMI"
-}
-
 variable "root_volume_size" {
   description = "rootvol"
 }

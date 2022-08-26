@@ -1,13 +1,14 @@
 ---
 - name: Install Cloudwatch from RPM
-  yum
+  yum:
     name: https://s3.amazonaws.com/amazoncloudwatch-agent/amazon_linux/amd64/latest/amazon-cloudwatch-agent.rpm
     state: present
+    disable_gpg_check: yes
 
 - name: cloudwatch_agent - Generate JSON Config
   template:
     src: ./templates/cloudwatchcfg/amazon-cloudwatch-agent.json.j2
-    dest: /opt/aws/amazon-cloudwatch-agent/ec2/amazon-cloudwatch-agent.json
+    dest: /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent.json
 
 - name: Enable and Start Cloudwatch
   systemd:

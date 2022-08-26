@@ -14,4 +14,3 @@ variable "mon_to_fri_only" {}
 variable "disable_api_termination" {}
 variable "private_r53" {}
 variable "nfs-instance-ip" {}
-variable "account_id" {}
