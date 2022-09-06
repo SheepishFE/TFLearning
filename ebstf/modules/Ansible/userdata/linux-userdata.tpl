@@ -32,7 +32,7 @@ ansible-galaxy collection install amazon.aws
 yum install -y nfs-utils
 sudo mkdir /var/backups
 chown ec2-user:ec2-user /var/backups
-echo "${node1_ip}:/shared /var/backups nfs defaults 0 0">> /etc/fstab
+echo "${nfs_ip}:/shared /var/backups nfs defaults 0 0">> /etc/fstab
 mount /var/backups
 
 #Create home directory on login
@@ -41,7 +41,11 @@ authconfig ==enablemkhomedir --update
 
 #Adds NFS node as a host
 echo "[nfs]
-${node1_ip}">>/etc/ansible/hosts
+${nfs_ip}">>/etc/ansible/hosts
+
+#Adds jenkins node as a host
+echo "[jenkins]
+${jenkins_ip}">>/etc/ansible/hosts
 
 # Install git and clone the repo to get ansible playbook code
 yum install -y git

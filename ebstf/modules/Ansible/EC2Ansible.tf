@@ -38,7 +38,9 @@ data "template_file" "linuxuserdata" {
     template = file("${path.module}/userdata/linux-userdata.tpl")
 
     vars = {
-        node1_ip = "${var.nfs-instance-ip}"
+        nfs_ip     = "${var.nfs-instance-ip}"
+        jenkins_ip = "${var.jenkins-instance-ip}"
+
     }
 }
 
