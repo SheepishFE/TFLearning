@@ -5,3 +5,7 @@ output "NFS" {
 output "Ansible" {
     value = module.EC2Ansible
 }
+
+output "Jenkins" {
+    value = module.EC2Jenkins
+}

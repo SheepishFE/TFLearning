@@ -8,6 +8,9 @@ hostname EC2Ansible.mgmt.test.com
 sudo yum update
 sudo yum install -y bind-utils
 
+#Install awscli
+sudo yum install -y awscli
+
 #SSM Agent install
 yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
 systemctl enable amazon-ssm-agent
@@ -47,10 +50,22 @@ ${nfs_ip}">>/etc/ansible/hosts
 echo "[jenkins]
 ${jenkins_ip}">>/etc/ansible/hosts
 
+#Add ALL hosts here for generic 
+echo "[servers]
+${nfs_ip}
+${jenkins_ip}
+localhost">>/etc/ansible/hosts
+
 # Install git and clone the repo to get ansible playbook code
 yum install -y git
 git clone https://@github.com/SheepishFE/TFLearning.git /home/ansible-user/repo
 chown -R ansible-user:ansible-user /home/ansible-user/repo
 chmod 755 /home/ansible-user/repo
+
+#populate known hosts
+ssh-keyscan -H "${nfs_ip}" >> /home/ansible-user/.ssh/known_hosts
+ssh-keyscan -H "${jenkins_ip}" >> /home/ansible-user/.ssh/known_hosts
+chown -R ansible-user:ansible-user /home/ansible-user/.ssh/
+chmod 755 /home/ansible-user/.ssh/
 
 reboot

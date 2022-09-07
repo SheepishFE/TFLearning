@@ -29,10 +29,11 @@ module "EC2Ansible" {
     keypair                 = "keypair"
     private_r53             = module.VPC.private_r53
     nfs-instance-ip         = module.EC2NFS.nfs-instance-ip
+    jenkins-instance-ip     = module.EC2Jenkins.jenkins-instance-ip
 }
 
-module "EC2Ansible" {
-    source = "./modules/Ansible"
+module "EC2Jenkins" {
+    source = "./modules/Jenkins"
 
     instance_size           = var.instance_size
     root_volume_size        = var.root_volume_size

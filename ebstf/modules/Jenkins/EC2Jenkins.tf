@@ -27,7 +27,7 @@ resource "aws_instance" "rhel_server" {
 
 resource "aws_route53_record" "nfs_r53_record" { 
         zone_id = "${var.private_r53}"
-        name    = "nfs-TEST"
+        name    = "jenkins-TEST"
         type    = "A"
         ttl     = "300"
         records = ["${aws_instance.rhel_server.private_ip}"]
@@ -35,6 +35,9 @@ resource "aws_route53_record" "nfs_r53_record" {
 
 data "template_file" "linuxuserdata" {
     template = file("${path.module}/userdata/linux-userdata.tpl")
+    vars = {
+        nfs_ip     = "${var.nfs-instance-ip}"
+        }
 }
 
 data "aws_ami" "rhel8" {

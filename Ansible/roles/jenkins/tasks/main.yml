@@ -1,0 +1,3 @@
+---
+- name: jenkins install
+  import_tasks: install_jenkins.yml

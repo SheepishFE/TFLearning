@@ -1,8 +1,6 @@
 ---
 - hosts:
-    nfs
-    localhost
     jenkins
   become: yes
   roles:
-    - common
+    - jenkins
