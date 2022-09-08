@@ -53,8 +53,7 @@ ${jenkins_ip}">>/etc/ansible/hosts
 #Add ALL hosts here for generic 
 echo "[servers]
 ${nfs_ip}
-${jenkins_ip}
-localhost">>/etc/ansible/hosts
+${jenkins_ip}">>/etc/ansible/hosts
 
 # Install git and clone the repo to get ansible playbook code
 yum install -y git

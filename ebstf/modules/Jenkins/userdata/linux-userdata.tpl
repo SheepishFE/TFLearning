@@ -27,4 +27,9 @@ mount /var/jenkins
 service oddjobd start chkconfig oddjobd on
 authconfig ==enablemkhomedir --update
 
+yum install -y git
+git clone https://@github.com/SheepishFE/TFLearning.git /var/jenkins/repo
+chown -R ec2-user:ec2-user /var/jenkins/repo
+chmod 755 /var/jenkins/repo
+
 reboot

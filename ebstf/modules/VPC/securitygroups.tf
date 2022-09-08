@@ -36,6 +36,14 @@ resource "aws_security_group" "nfs-sg" {
     description = "http"
   }
 
+    ingress {
+    from_port   = 0
+    to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "jenkins"
+  }
+
   # Replace the allow all egress rule that terraform automatically removes by default
   egress {
     from_port   = 0
